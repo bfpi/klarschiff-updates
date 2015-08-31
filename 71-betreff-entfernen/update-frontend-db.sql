@@ -66,13 +66,13 @@ CREATE OR REPLACE VIEW klarschiff.klarschiff_wfs_georss AS
         END AS unterstuetzungen,
         CASE
             WHEN v.beschreibung IS NOT NULL AND v.beschreibung <> ''::text AND v.beschreibung_freigegeben IS TRUE AND v.beschreibung_vorhanden IS TRUE THEN v.beschreibung
-            WHEN v.status::text = 'offen'::text AND v.beschreibung_vorhanden IS TRUE AND v.beschreibung_freigegeben IS FALSE THEN 'redaktionelle Prüfung ausstehend'::text
+            WHEN v.status::text = 'offen'::text AND v.beschreibung_vorhanden IS TRUE AND v.beschreibung_freigegeben IS FALSE THEN 'redaktionelle PrÃ¼fung ausstehend'::text
             WHEN v.status::text <> 'offen'::text AND v.beschreibung_vorhanden IS TRUE AND v.beschreibung_freigegeben IS FALSE THEN 'redaktionell nicht freigegeben'::text
             ELSE 'nicht vorhanden'::text
         END AS beschreibung,
         CASE
-            WHEN v.foto_thumb IS NOT NULL AND v.foto_thumb::text <> ''::text AND v.foto_freigegeben IS TRUE AND v.foto_vorhanden IS TRUE THEN ((((('<br/><a href="http://support.klarschiff-hro.de/fotos/'::text || v.foto_normal::text) || '" target="_blank" title="große Ansicht öffnen…"><img src="http://support.klarschiff-hro.de/fotos/'::text) || v.foto_thumb::text) || '" alt="'::text) || v.foto_thumb::text) || '" /></a>'::text
-            WHEN v.status::text = 'offen'::text AND v.foto_vorhanden IS TRUE AND v.foto_freigegeben IS FALSE THEN 'redaktionelle Prüfung ausstehend'::text
+            WHEN v.foto_thumb IS NOT NULL AND v.foto_thumb::text <> ''::text AND v.foto_freigegeben IS TRUE AND v.foto_vorhanden IS TRUE THEN ((((('<br/><a href="http://support.klarschiff-hro.de/fotos/'::text || v.foto_normal::text) || '" target="_blank" title="groÃŸe Ansicht Ã¶ffnenÂ…"><img src="http://support.klarschiff-hro.de/fotos/'::text) || v.foto_thumb::text) || '" alt="'::text) || v.foto_thumb::text) || '" /></a>'::text
+            WHEN v.status::text = 'offen'::text AND v.foto_vorhanden IS TRUE AND v.foto_freigegeben IS FALSE THEN 'redaktionelle PrÃ¼fung ausstehend'::text
             WHEN v.status::text <> 'offen'::text AND v.foto_vorhanden IS TRUE AND v.foto_freigegeben IS FALSE THEN 'redaktionell nicht freigegeben'::text
             ELSE 'nicht vorhanden'::text
         END AS foto,
