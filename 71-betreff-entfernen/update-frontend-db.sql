@@ -1,8 +1,9 @@
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
 
-DROP VIEW klarschiff.klarschiff_wfs_georss;
-DROP VIEW klarschiff.klarschiff_wfs;
+DROP VIEW IF EXISTS klarschiff.klarschiff_wfs_georss;
+DROP VIEW IF EXISTS klarschiff.klarschiff_wfs_tmpl;
+DROP VIEW IF EXISTS klarschiff.klarschiff_wfs;
 
 ALTER TABLE klarschiff.klarschiff_vorgang RENAME COLUMN details TO beschreibung;
 ALTER TABLE klarschiff.klarschiff_vorgang RENAME COLUMN details_freigegeben TO beschreibung_freigegeben;
@@ -77,8 +78,8 @@ CREATE OR REPLACE VIEW klarschiff.klarschiff_wfs_georss AS
     END AS beschreibung,
     CASE
       WHEN v.foto_thumb IS NOT NULL AND v.foto_thumb::text <> ''::text AND v.foto_freigegeben IS TRUE AND v.foto_vorhanden IS TRUE
-        THEN ((((('<br/><a href="http://support.klarschiff-hro.de/fotos/'::text || v.foto_normal::text) ||
-          '" target="_blank" title="große Ansicht öffnen…"><img src="http://support.klarschiff-hro.de/fotos/'::text) || v.foto_thumb::text) ||
+        THEN ((((('<br/><a href="http://klarschiff-hgw.de/fotos/'::text || v.foto_normal::text) ||
+          '" target="_blank" title="große Ansicht öffnen…"><img src="http://klarschiff-hgw.de/fotos/'::text) || v.foto_thumb::text) ||
           '" alt="'::text) || v.foto_thumb::text) || '" /></a>'::text
       WHEN v.status::text = 'offen'::text AND v.foto_vorhanden IS TRUE AND v.foto_freigegeben IS FALSE THEN 'redaktionelle Prüfung ausstehend'::text
       WHEN v.status::text <> 'offen'::text AND v.foto_vorhanden IS TRUE AND v.foto_freigegeben IS FALSE THEN 'redaktionell nicht freigegeben'::text
