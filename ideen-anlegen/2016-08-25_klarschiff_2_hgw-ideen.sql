@@ -9,9 +9,9 @@ DELETE FROM klarschiff_kategorie
   WHERE id IN (128, 137, 138, 139, 140, 153, 154, 155, 156, 157, 158, 159, 160);
 
 \echo 'Hauptkategorien anlegen'
-INSERT INTO klarschiff_kategorie (id, naehere_beschreibung_notwendig, name, typ) VALUES (162, 'keine', 'Verkehr', 'idee');
-  (167, 'keine', 'Aufenthalt', 'idee');
-  (170, 'keine', 'Sport & Spiel', 'idee');
+INSERT INTO klarschiff_kategorie (id, naehere_beschreibung_notwendig, name, typ) VALUES (162, 'keine', 'Verkehr', 'idee'),
+  (167, 'keine', 'Aufenthalt', 'idee'),
+  (170, 'keine', 'Sport & Spiel', 'idee'),
   (173, 'keine', 'Sonstiges', 'idee');
 
 \echo 'Unterkategorien anlegen'
