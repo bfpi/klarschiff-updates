@@ -27,9 +27,3 @@ DROP FUNCTION IF EXISTS klarschiff_triggerfunction_unterstuetzer();
 
 DROP TRIGGER IF EXISTS klarschiff_trigger_vorgang ON klarschiff_vorgang CASCADE;
 DROP FUNCTION IF EXISTS klarschiff_triggerfunction_vorgang();
-
-DROP TRIGGER IF EXISTS klarschiff_trigger_adresse ON klarschiff_adresse CASCADE;
-DROP FUNCTION IF EXISTS klarschiff_triggerfunction_adresse();
-
-DROP TRIGGER IF EXISTS klarschiff_trigger_flurstueckseigentum ON klarschiff_flurstueckseigentum CASCADE;
-DROP FUNCTION IF EXISTS klarschiff_triggerfunction_flurstueckseigentum();
