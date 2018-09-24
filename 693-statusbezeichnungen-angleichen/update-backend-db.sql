@@ -8,6 +8,6 @@ UPDATE klarschiff_enum_vorgang_status set id = 'nichtLoesbar', text = 'nicht lö
 UPDATE klarschiff_enum_vorgang_status set id = 'geloest', text = 'gelöst' where id = 'abgeschlossen';
 
 UPDATE klarschiff_vorgang set status = 'nichtLoesbar' where status = 'wirdNichtBearbeitet';
-UPDATE klarschiff_vorgang set status = 'gelöst' where status = 'abgeschlossen';
+UPDATE klarschiff_vorgang set status = 'geloest' where status = 'abgeschlossen';
 
 alter table klarschiff_redaktion_kriterien rename COLUMN wirdnichtbearbeitet_ohne_statuskommentar TO nicht_loesbar_ohne_statuskommentar;
