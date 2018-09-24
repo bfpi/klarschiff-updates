@@ -1,3 +1,6 @@
+DROP TRIGGER IF EXISTS klarschiff_trigger_adresse ON klarschiff_vorgang CASCADE;
+DROP FUNCTION IF EXISTS klarschiff_triggerfunction_adresse();
+
 DROP TRIGGER IF EXISTS klarschiff_trigger_enum_vorgang_status ON klarschiff_enum_vorgang_status CASCADE;
 DROP FUNCTION IF EXISTS klarschiff_triggerfunction_enum_vorgang_status();
 
