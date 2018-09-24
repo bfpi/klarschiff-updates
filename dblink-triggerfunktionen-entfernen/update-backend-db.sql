@@ -25,5 +25,8 @@ DROP FUNCTION IF EXISTS klarschiff_triggerfunction_trashmail();
 DROP TRIGGER IF EXISTS klarschiff_trigger_unterstuetzer ON klarschiff_unterstuetzer CASCADE;
 DROP FUNCTION IF EXISTS klarschiff_triggerfunction_unterstuetzer();
 
+DROP TRIGGER IF EXISTS klarschiff_trigger_verlauf ON klarschiff_verlauf CASCADE;
+DROP FUNCTION IF EXISTS klarschiff_triggerfunction_verlauf();
+
 DROP TRIGGER IF EXISTS klarschiff_trigger_vorgang ON klarschiff_vorgang CASCADE;
 DROP FUNCTION IF EXISTS klarschiff_triggerfunction_vorgang();
